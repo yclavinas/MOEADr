@@ -1,5 +1,5 @@
 rm(list = ls(all = TRUE))
-setwd("~/myMOEADr/dataMOEADr/")
+#setwd("~/myMOEADr/dataMOEADr/")
 library(feather)
 library(ggplot2) # used
 library(tidyverse) # used
@@ -7,23 +7,23 @@ library(hrbrthemes) # used
 library(plyr) # used
 library(viridis) # used
 
-results_2 <- read_feather("results_uf2")
-results_3 <- read_feather("results_uf3")
-results_DTLZ <- read_feather("results_DTLZ")
-results_fixed <- read_feather("~/myMOEADr/dataMOEADr/results_fixed")
+#results_2 <- read_feather("results_uf2") 
+#results_3 <- read_feather("results_uf3")
+#results_DTLZ <- read_feather("results_DTLZ")
+results_cec <- read_feather("../post_processed_data/results_cec")
 
 
-results <- rbind(results_2, results_3, results_DTLZ)
-
-unique(results$fun)
-unique(results$name)
+#results <- rbind(results_2, results_3, results_DTLZi)
+#
+#unique(results$fun)
+#unique(results$name)
 
 # pairwise.wilcox.test(results_DTLZ$hv, results_DTLZ$name, p.adjust.method = "hommel")
 # pairwise.wilcox.test(results_UF$hv, results_DTLZ$name, p.adjust.method = "hommel")
 pairwise.wilcox.test(results_fixed$hv, results_fixed$name, p.adjust.method = "hommel")
 pairwise.wilcox.test(results_fixed$igd, results_fixed$name, p.adjust.method = "hommel")
 
-boxplot(results_fixed$hv ~ results_fixed$name)
+#boxplot(results_fixed$hv ~ results_fixed$name)
 
 for (fun in unique(results_fixed$fun)){
   print(fun)
@@ -62,6 +62,7 @@ for (fun in unique(results_fixed$fun)){
   boxplot(temp$hv ~ temp$name, main = fun)
 }
 
+# data for tables : igd, hv, number of nondominated solutions
 for (fun in unique(results_fixed$fun)){
   print(fun)
   temp <- results_fixed[results_fixed$fun == fun,]

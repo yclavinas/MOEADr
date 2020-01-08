@@ -200,7 +200,7 @@ for (fun in fun.names1) {
     i <- 1
     # sampled <- sample(1:num_pf, num_pf)
     sampled <- sample(begin:num_pf, (num_pf+1)-begin)
-    while (i <= num_pf) {
+    while (i <= (num_pf+1)-begin) {
       print("iter")
       cat(i, sampled[i])
       if (sampled[i] == 1) {
@@ -407,6 +407,6 @@ for (fun in fun.names1) {
       i <- i + 1
     }
     j <- j + 1
-    eixt()
+#1    eixt()
   }
 }
