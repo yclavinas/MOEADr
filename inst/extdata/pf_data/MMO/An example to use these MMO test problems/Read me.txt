@@ -1,0 +1,9 @@
+This is an example to use CEC MMO test problem suite.
+Run "main.m " 
+
+
+Please refer to the following references for details of DN-NSGAII and MO_Ring_PSO_SCD.
+J. J. Liang, C. T. Yue, and B. Y. Qu, ¡°Multimodal multi-objective optimization: A preliminary study¡±, IEEE Congress on Evolutionary Computation 2016, pp. 2454-2461, 2016.
+C. T. Yue, B. Y. Qu, and J. J. Liang, ¡°A Multiobjective Particle Swarm Optimizer Using Ring Topology for Solving Multimodal Multiobjective Problems¡±, IEEE Transactions on Evolutionary Computation, vol. 22, no. 5, pp. 805-817, 2018.
+
+Any question, please contact liangjing@zzu.edu.cn or zzuyuecaitong@163.com.
