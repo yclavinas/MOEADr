@@ -399,6 +399,8 @@ moeadps <-
       
       # ========== Resource Allocation - Selecting solutions given Priority Function values
       # find indexes of solutions given their priority value (priority.values)
+      print(iter)
+      print(length(priority.values))
       select_solutions <- resource_allocation_select(
         iter = iter,
         resource.allocation = resource.allocation,
@@ -551,7 +553,7 @@ moeadps <-
       neighbors.T <- neighbors$T
       
       # if (iter > 1 || resource.allocation$name == "random") {
-      if (iter >  resource.allocation$dt || resource.allocation$name == "random") {
+      if (iter >  resource.allocation$dt && resource.allocation$name == "random") {
         updates <- resource_allocation_update(
           iter,
           resource.allocation,
@@ -577,26 +579,6 @@ moeadps <-
         init_ra$dt.bigZ[[index]] <- bigZ
       }
       
-      
-      # if (resource.allocation$period > 0 &&
-      #     iter %% resource.allocation$period == 0) {
-      #   temp <- neighbors
-      #   temp$T <- dim(W)[1]
-      #   BP <- define_neighborhood(neighbors = temp,
-      #                             v.matrix  = switch(temp$name,
-      #                                                lambda = W,
-      #                                                x      = X),
-      #                             iter      = iter)
-      #   Xt <- X
-      #   Yt <- Y
-      #   Vt <- V
-      #   XY <- do.call(update_population,
-      #                 args = as.list(environment()))
-      #   X       <- XY$X
-      #   Y       <- XY$Y
-      #   V       <- XY$V
-      #   Archive <- XY$Archive
-      # }
       
       # ========== Stop Criteria
       # Calculate iteration time

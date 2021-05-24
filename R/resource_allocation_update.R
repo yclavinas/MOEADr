@@ -7,7 +7,6 @@
 #' @param iter integer iteration
 #' @param resource.allocation list resource allocation method and specific vars
 #' @param priority.values priority values for deciding which subproblem to give resources
-#' @param idx.boundary indexes of the boundaries subproblem
 #' @param problem list with number of objectives n
 #' @param bigZ agg values for RI
 #' @param dt.bigZ agg values for RI from dt previous iteration
