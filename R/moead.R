@@ -399,8 +399,6 @@ moeadps <-
       
       # ========== Resource Allocation - Selecting solutions given Priority Function values
       # find indexes of solutions given their priority value (priority.values)
-      print(iter)
-      print(length(priority.values))
       select_solutions <- resource_allocation_select(
         iter = iter,
         resource.allocation = resource.allocation,
@@ -445,6 +443,7 @@ moeadps <-
       V$Cmatrix <- V$Cmatrix[indexes,]
       V$Vmatrix <- V$Vmatrix[indexes,]
       V$v <- V$v[indexes]
+      
       Xv      <- do.call(perform_variation,
                          args = as.list(environment()))
       

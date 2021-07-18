@@ -1,9 +1,12 @@
 library(moPLOT)
 library(fields)
+library(ggplot2)
 ## runDashboard()
 
 
-fn = smoof::makeBiObjBBOBFunction(dimensions = 2, fid = 35, iid = 1)
+# fn = smoof::makeBiObjBBOBFunction(dimensions = 2, fid = 35, iid = 1)
+# fn = smoof::makeMMF4Function()
+fn = smoof::makeUFFunction(dimensions = 3,id = 5) #5
 problem.DTLZ <- function(X) {
   t(apply(X, MARGIN = 1,
            FUN = fn))
@@ -88,5 +91,6 @@ ggplotPLOTObjSpace <- function (obj.space, sinks, height, check.data = TRUE) {
   return(g)
 }
 
-ggplotPLOT(design$dec.space, design$obj.space, less$sinks, less$height)
-ggplotPLOTObjSpace(design$obj.space, less$sinks, less$height)
+# ggplotPLOT(design$dec.space, design$obj.space, less$sinks, less$height)
+print(ggplotPLOTObjSpace(design$obj.space, less$sinks, less$height))
+

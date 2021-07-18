@@ -55,7 +55,7 @@ variation_diffmut <- function(X, P, B, Phi = NULL, basis = 'rand', ...){
   # ========== Error catching and default value definitions
   assertthat::assert_that(
     is.numeric(X) && is.matrix(X),
-    is.numeric(P) && is.matrix(P) && is_within(P, 0, 1, strict = FALSE),
+    is.numeric(P) && is.matrix(P) && is_withi1n(P, 0, 1, strict = FALSE),
     # identical(nrow(X), nrow(P)),
     nrow(P) == ncol(P),
     is.numeric(B) && is.matrix(B),

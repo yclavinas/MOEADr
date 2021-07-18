@@ -75,6 +75,7 @@ updt_restricted <- function(update, X, Xt, Y, Yt, V, Vt, sel.indx, B, ...){
   # Counter of how many time each solution has been used
   used <- rep(0, nrow(X))
   
+  
   # Update matrix of candidate solutions
   Xnext <- t(vapply(X         = I,
                     FUN       = do.update,
